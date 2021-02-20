@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { signup } from '../../actions';
 import Layout from '../../componants/Layout';
 import Card from '../../componants/UI/Card';
@@ -17,6 +18,7 @@ const SignupPage = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
+    const auth = useSelector(state => state.auth);
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -25,6 +27,11 @@ const SignupPage = (props) => {
         }
         dispatch(signup(user))
     }
+
+    if (auth.authenticated) {
+        return <Redirect to='/' />
+    }
+
     return (
         <Layout>
             <div className='credentialContainer'>
@@ -34,6 +41,7 @@ const SignupPage = (props) => {
                         <div style={{ display: 'flex' }}>
                             <input
                                 style={{ marginRight: 7 }}
+                                required
                                 type='text'
                                 value={firstName}
                                 placeholder='first name'
@@ -41,6 +49,7 @@ const SignupPage = (props) => {
                             />
                             <input
                                 style={{ marginLeft: 8 }}
+                                required
                                 type='text'
                                 value={lastName}
                                 placeholder='last name'
@@ -48,7 +57,8 @@ const SignupPage = (props) => {
                             />
                         </div>
                         <input
-                            type='text'
+                            required
+                            type='email'
                             value={email}
                             placeholder='email'
                             onChange={e => setEmail(e.target.value)}

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { signin } from '../../actions';
 import Layout from '../../componants/Layout';
 import Card from '../../componants/UI/Card';
 import '../style.css';
@@ -12,10 +15,19 @@ const SigninPage = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const dispatch = useDispatch();
+    const auth = useSelector(state => state.auth);
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(email, password)
+        const user = {
+            email, password
+        }
+        dispatch(signin(user))
+    }
+
+    if (auth.authenticated) {
+        return <Redirect to='/' />
     }
 
     return (
@@ -25,12 +37,14 @@ const SigninPage = (props) => {
                     <form onSubmit={handleSubmit} className='credentialForm'>
                         <h3>Sign In</h3>
                         <input
-                            type='text'
+                            required
+                            type='email'
                             value={email}
                             placeholder='email'
                             onChange={e => setEmail(e.target.value)}
                         />
                         <input
+                            required
                             type='password'
                             value={password}
                             placeholder='password'
