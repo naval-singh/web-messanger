@@ -1,0 +1,43 @@
+.credentialContainer{
+    width: 500px;
+    margin: 40px auto;
+}
+.credentialContainer .credentialForm{
+    padding: 10px 20px;
+}
+.credentialContainer .credentialForm h3{
+    margin: 10px 0;
+    font-size: 24px;
+    padding-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 4px solid #c00316;
+}
+.credentialContainer .credentialForm input{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0 0 2px 1px #eaeaea;
+}
+.credentialContainer .credentialForm button{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: #6460dd;
+    border-radius: 3px;
+    transition: all .15s linear;
+}
+.credentialContainer .credentialForm button:hover{
+    background: #0e06f5;
+    cursor: pointer;
+}
