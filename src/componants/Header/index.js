@@ -15,7 +15,7 @@ const Header = (props) => {
     const auth = useSelector(state => state.auth);
 
     const handleLogout = () => {
-        dispatch(logout())
+        dispatch(logout(auth.uid))
     }
 
     const renderNonLoggedInMenu = () => {
