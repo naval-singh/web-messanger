@@ -63,7 +63,6 @@
     object-fit: cover;
 }
 .messageStyle{
-    background: skyblue;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 10px;
@@ -76,4 +75,16 @@
     overflow-x: hidden;
     position: relative;
     top: 40px;
+}
+.onlineStatus{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #16e316;
+    box-shadow: 0 0 10px 0 #16e316;
+}
+.onlineStatus.off{
+    background: green;
+    box-shadow: 0 0 0 0;
 }
