@@ -9,7 +9,7 @@ export const signup = user => {
         dispatch({ type: authConstants.USER_LOGIN_REQUEST })
         auth.createUserWithEmailAndPassword(user.email, user.password)
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 const loggedInUser = {
                     firstName: user.firstName,
                     lastName: user.lastName,
@@ -66,7 +66,7 @@ export const signin = user => {
         dispatch({ type: authConstants.USER_LOGIN_REQUEST })
         auth.signInWithEmailAndPassword(user.email, user.password)
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 const name = data.user.displayName.split(' ')
                 const loggedInUser = {
                     firstName: name[0],
