@@ -77,6 +77,7 @@ const HomePage = (props) => {
             <section className="container">
 
                 <div className="listOfUsers">
+                    {/* <div className='onlineUsers'></div> */}
                     {renderListOfUsers()}
                 </div>
 

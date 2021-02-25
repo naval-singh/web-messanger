@@ -28,18 +28,37 @@
     font-weight: bold;
     font-family: sans-serif;
 }
+.onlineUsers{
+    height: 40px;
+    width: 100%;
+    background: #e2e0e0;
+    position: relative;
+}
 .chatControls{
     display: flex;
     position: fixed;
     width: 70%;
-    height: 50px;
+    height: 60px;
     bottom: 0;
 }
 .chatControls textarea{
     width: 90%;
+    outline: none;
+    border: 1px solid #c00316;
+    background: #eaeaea;
+    padding: 5px 10px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .chatControls button{
     width: 10%;
+    border: none;
+    background: #c00316;
+    color: #fff;
+    transition: all .15s linear;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.chatControls button:hover{
+    background: #9c0414;
 }
 .displayName{
     display: flex;
@@ -81,10 +100,30 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background: #16e316;
-    box-shadow: 0 0 10px 0 #16e316;
+    background: green;
+    box-shadow: 0 0 15px 3px #16e316;
 }
 .onlineStatus.off{
-    background: green;
+    background: #fff;
+    opacity: .5;
     box-shadow: 0 0 0 0;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
